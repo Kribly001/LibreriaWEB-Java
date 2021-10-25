@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(45, 219, 231);
+}
+#h1{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+#h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+#parrafo1{
+    font-family: fantasy;
+    text-align: left;
+    color:brown ;
+}
+#parrafo2{
+    font-family: fantasy;
+    text-align: left;
+    color: chartreuse;
+}
+

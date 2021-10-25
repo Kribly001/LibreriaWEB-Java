@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+</head>
+
+
+<body>
+    <h1>Registrar un usuario</h1>
+    <form action="/Formulario" method="POST"></form>
+    <label for="Nombre"><strong>Nombre de usuario</strong></label>
+    <br>
+    <input id="Nombre" type="text" name="Nombre">
+    <br>
+    <label for="Contraseña"><strong>Contraseña del usuario</strong></label>
+    <br>
+    <input id="Contraseña" type="password" name="Contraseña">
+    <br>
+    <label for="Edad"><strong>Edad del usuario</strong></label>
+    <br>
+    <input id="Edad" type="number" name="Edad">
+    <br>
+    <label for="Nacimiento"><strong>Fecha de nacimiento del usuario</strong></label>
+    <br>
+    <input id="Nacimiento" type="date" name="Nacimiento">
+    <br>
+    <label for="Sexo"><strong>Sexo del usuario</strong></label>
+    <br>
+    <input type="radio" name="Sexo" value="1">Hombre
+    <br>
+    <input type="radio" name="Sexo" value="2">Mujer
+    <br>
+    <input type="radio" name="Sexo" value="3">Prefiero no decir
+    <br>
+    <label for="Nacionalidad"><strong>Pais de nacimiento del usuario</strong></label>
+    <br>
+    <select name="Pais">
+        <option>Argentina</option>
+        <option>Chile</option>
+        <option>Peru</option>
+        <option>Brasil</option>
+    </select>
+    <br>
+    <button type="submit">Enviar</button>
+    <button type="reset">Borrar</button>
+    </form>
+</body>
+
+</html>

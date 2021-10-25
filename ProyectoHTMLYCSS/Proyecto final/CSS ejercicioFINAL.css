@@ -1,0 +1,13 @@
+.producto1{
+    float: left;
+    width: 200px;
+    height: 150;
+}
+#colortitulo{
+    color:lightblue;
+    font-family: fantasy;
+
+}
+.fondito{
+    background-image:url(Imagenes/tienda.jpg);
+}

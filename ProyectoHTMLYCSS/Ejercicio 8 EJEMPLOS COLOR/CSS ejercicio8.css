@@ -1,0 +1,18 @@
+/*Estado normal color rojo */
+a:link {color:#CC0000}
+
+/*Color de fondo al pasar el mouse*/
+  a:hover{
+    background-color: #CC0000; 
+  }
+  /*Color de letra al pasar mouse*/
+  a:hover{
+    color: #fff;
+  }
+  /*Color de enlace cuando ya fue visitado*/
+  a:visited {
+    color: #CCC;
+    }
+
+ 
+
