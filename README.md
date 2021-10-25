@@ -1,2 +1,2 @@
 # HtmlEgg
-Ejercicios html de egg
+Ejercicios del curso EGG
