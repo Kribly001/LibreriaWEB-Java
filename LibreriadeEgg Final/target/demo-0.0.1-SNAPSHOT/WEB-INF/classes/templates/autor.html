@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+
+        <meta charset="utf-8">
+            <link href="biblioteca_CSS.css" rel="stylesheet" type="text/css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+                      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+                    <link rel="stylesheet" href="/biblioteca_CSS.css" type="text/css"/>
+                    <title>Cargar Libro</title>
+                    </head>
+<body>
+                        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                            <a class="navbar-brand" href="/inicio">MiLibreria</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/inicio">Inicio</a>
+                                    </li>
+                                    <li class="nav-item active ">
+                                        <a class="nav-link" href="#">Cargar Libros <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/lista">Mostrar Tablas</a>
+                                    </li>
+                            </div>
+                        </nav>
+                    <body class="fonditoformulario">
+
+                        <h1 class="display-2">Administración de Autores<img src="/imagenes/librospequeño.jpg" alt="Biblioteca" height="70px" width="70px"> </h1>
+                        <blockquote class="blockquote">
+                            <p class="mb-0">Utilize este modulo para cargar libros y autores</p>
+                        </blockquote>
+                        <hr>
+                            <div th:if="${exito}!=null" class="card text-white bg-success mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Exito</h5>  
+                                    <p class="card-text" th:text="${exito}"></p>
+                                </div>
+                            </div>
+                            <div th:if="${error}!=null" class="card text-white bg-danger mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Error</h5>  
+                                    <p class="card-text" th:text="${error}"></p>
+                                </div>
+                            </div>
+
+                            <form th:action="@{/inicio/autor/cargarAutor}" method="POST">
+
+                                <p><strong>Nombre del Autor* </strong></p>
+                                <input type="text" class="form-control" name="nombre">
+
+                                    <p><strong>Titulo del libro*</strong></p>
+                                    <input type="text" class="form-control" name="titulo">
+
+
+                                        <p><strong>ISBN</strong></p>
+                                        <input type="number" class="form-control" name="ISBN">
+
+
+                                            <p><strong>Año</strong></p>
+                                            <input type="number" class="form-control" name="anio">
+
+                                                <p><strong>Nombre Editorial*</strong></label>
+                                                    <input type="text" class="form-control" name="nombreEditorial">
+
+                                                        <button type="submit" class="btn btn-primary" style="float:right">Guardar</button>
+
+                                                        </form>
+
+                                                        <blockquote class="blockquote text-left">
+                                                            <footer class="blockquote-footer">Los campos con * son obligatorios</footer>
+                                                        </blockquote>
+
+                                                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                                                                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                                                        crossorigin="anonymous"></script>
+                                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+                                                                integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                                                        crossorigin="anonymous"></script>
+                                                        </body>
+
+                                                        </html>

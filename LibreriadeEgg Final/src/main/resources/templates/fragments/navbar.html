@@ -1,0 +1,50 @@
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/inicio">MiBiblioteca</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/inicio">Inicio</a>
+            </li>
+            <li class="nav-item ">
+                <a  sec:authorize="hasRole('ADMIN')" class="nav-link" href="/inicio/autor">Cargar Libros</a>
+            </li>
+            <li class="nav-item">
+                <a  sec:authorize="hasRole('ADMIN')" class="nav-link" href="/lista">Libros cargados</a>
+                <a  sec:authorize="hasRole('USUARIO')" class="nav-link" href="/lista">Libros disponibles</a>
+            </li>  
+             <li class="nav-item">
+                <a class="nav-link" sec:authorize="hasRole('ADMIN')" href="/autores">Autores</a>          
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="hasRole('ADMIN')" href="/editorial">Editoriales</a>          
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" sec:authorize="hasRole('ADMIN')" th:href="@{/admin/dashboard}">Dashboard</a>          
+            </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a style="margin: 10px" type="button" class="btn btn-primary" th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}" >EDITA TU PERFIL</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a style="margin: 10px" type="button" class="btn btn-danger" href="/logout" th:if="${session.usuariosession != null}" >SALIR</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
+
+<!--  <li class="nav-item">
+                    <a style="margin: 10px" type="button" class="btn btn-primary" th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}" >EDITA TU PERFIL</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a style="margin: 10px" type="button" class="btn btn-danger" href="/logout" th:if="${session.usuariosession != null}" >SALIR</a>
+                </li> -->

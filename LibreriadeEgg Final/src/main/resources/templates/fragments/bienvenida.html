@@ -1,0 +1,11 @@
+<body>
+
+    <h1 style='text-align:center' class="p-3 mb-2 bg-light text-dark" >Bienvenido</h1> 
+
+
+<tr>
+<h2  style='text-align:center' class="p-3 mb-2 bg-light text-dark" th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre + ' ' +session.usuariosession.apellido}"></h2>
+</tr>
+
+
+</body>

@@ -1,0 +1,89 @@
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+            <link href="biblioteca_CSS.css" rel="stylesheet" type="text/css">
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+                      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+                    <link rel="stylesheet" href="/biblioteca_CSS.css" type="text/css"/>
+
+                    <title>Milibreria</title>
+                    </head>
+                    <body class="fondito">
+                        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                            <a class="navbar-brand" href="#">MiLibreria</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Inicio</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/inicio/autor">Cargar Libros <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/lista">Mostrar Tablas</a>
+                                    </li>
+                            </div>
+                        </nav>
+                        <section>
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 order-lg-2">
+                                        <div class="p-5">
+                                            <img th:if="${perfil.foto != null}" class="img-fluid rounded-circle" th:src="${'/foto/usuario/' + perfil.id}" alt="">
+                                                <img th:if="${perfil.foto == null}" class="img-fluid rounded-circle" src="img/m1.jpeg" alt="">
+                                                    </div>
+                                                    </div>
+                                                    <div class="col-lg-6 order-lg-1">
+                                                        <div class="p-5">
+                                                            <h2 class="display-4">Actualiza tu perfil</h2>
+                                                            <form action="/usuario/actualizar-perfil" method="POST" enctype="multipart/form-data">
+
+
+                                                                <p th:if="${error != null}" th:text="${error}" style="color:red;"></p>
+
+                                                                <input type="hidden" name="id" th:value="${perfil.id}"/>
+
+                                                                <label>Nombre</label>
+                                                                <input type="text" class="form-control" name="nombre" th:value="${perfil.nombre}"/>
+
+                                                                <label>Apellido</label>
+                                                                <input type="text" class="form-control" name="apellido" th:value="${perfil.apellido}" />
+
+                                                                <label>E-Mail</label>
+                                                                <input type="email" class="form-control" name="mail" th:value="${perfil.mail}"/>
+
+                                                                <label>Foto</label>
+                                                                <input type="file" class="form-control" name="archivo"/>
+
+                                                                <label>Zona</label>
+                                                                <select class="form-control" name="idZona"> 
+                                                                    <option th:each="zona : ${zonas}" th:value="${zona.id}" th:text="${zona.nombre}" th:selected="${perfil.zona != null && zona.id == perfil.zona.id}"></option>
+                                                                </select>
+
+
+                                                                <label>Clave</label>
+                                                                <input type="password" class="form-control" name="clave1" th:value="${clave1}"/>
+
+                                                                <label>Repetir Clave</label>
+                                                                <input type="password" class="form-control" name="clave2" th:value="${clave2}"/>
+
+                                                                <br/><button type="submit" class="btn btn-primary">Actualizar Perfil</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    </div>
+                                                    </section>
+
+                                                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                                                            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                                                    crossorigin="anonymous"></script>
+                                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+                                                            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+                                                    crossorigin="anonymous"></script>
+                                                    </body>
+                                                    </html>
