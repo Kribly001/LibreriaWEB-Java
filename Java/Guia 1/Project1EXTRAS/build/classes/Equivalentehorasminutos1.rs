@@ -1,2 +1,0 @@
-Project1EXTRAS.Equivalentehorasminutos1
-proyecto1.Equivalentehorasminutos1
